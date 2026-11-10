@@ -242,6 +242,18 @@ inspire, and create. Any contributions you make are **greatly appreciated**.
 A change to a template page also changes the example page, [WRITING_GUIDE.md](WRITING_GUIDE.md)
 where it applies, and [CHANGELOG.md](CHANGELOG.md). The **Check links** workflow must pass.
 
+To release a version (maintainers):
+
+```sh
+scripts/version.sh bump 1.1.0   # sets VERSION, the index.md markers, adds a CHANGELOG heading
+# write the 1.1.0 section in CHANGELOG.md
+scripts/version.sh check        # the same check runs on every push and pull request
+git commit -am "chore: release v1.1.0" && git tag -a v1.1.0 -m v1.1.0 && git push origin main v1.1.0
+```
+
+Pushing the tag runs the **Release** workflow, which makes the GitHub release from that
+CHANGELOG section.
+
 ### Top contributors:
 
 <a href="https://github.com/ysasiwat/user-manual-boilerplate/graphs/contributors">

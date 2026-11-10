@@ -14,6 +14,7 @@ current() { tr -d '[:space:]' < VERSION; }
 notes() {
   # Lines after "## [v] ..." up to the next "## [" heading, with blank lines trimmed at both ends.
   awk -v v="$1" '
+    { sub(/\r$/, "") }
     index($0, "## [" v "]") == 1 { on = 1; next }
     on && /^## \[/ { exit }
     on { buf[n++] = $0 }

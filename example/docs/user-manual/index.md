@@ -1,4 +1,4 @@
-<!-- user-manual-boilerplate v1.0.0 -->
+<!-- user-manual-boilerplate v1.0.1 -->
 <!-- Filled-in example. tilecut is a fictional tool: the commands show the shape of a real manual, they do not run. -->
 
 # tilecut user manual

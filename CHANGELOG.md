@@ -4,6 +4,17 @@ All notable changes to this template. Versions follow [Semantic Versioning](http
 a major version changes the page set or a token name, so a manual made from an older version
 needs work to follow it.
 
+## [1.0.1] - 2026-11-10
+
+### Added
+
+- `VERSION` file with the current template version.
+
+### Changed
+
+- README restyled in the readme-boilerplate layout.
+- Version marker in `index.md` set to `v1.0.1`.
+
 ## [1.0.0] - 2026-11-10
 
 ### Added

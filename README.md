@@ -193,11 +193,11 @@ mkdocs serve
 The first line of every manual's `index.md` records the template version it came from:
 
 ```html
-<!-- user-manual-boilerplate v1.0.0 -->
+<!-- user-manual-boilerplate v1.0.1 -->
 ```
 
-Keep it. To bring a manual up to a newer template, read [CHANGELOG.md](CHANGELOG.md) from that
-version on.
+Keep it. The current template version is in [VERSION](VERSION). To bring a manual up to a
+newer template, read [CHANGELOG.md](CHANGELOG.md) from that version on.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

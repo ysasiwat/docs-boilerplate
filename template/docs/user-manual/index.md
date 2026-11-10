@@ -1,4 +1,4 @@
-<!-- user-manual-boilerplate v1.0.0 -->
+<!-- user-manual-boilerplate v1.0.1 -->
 <!--
 *** Blank user manual. Replace every {{token}}, then delete the comment blocks.
 *** `grep -rn '{{' docs/user-manual` lists any you missed.

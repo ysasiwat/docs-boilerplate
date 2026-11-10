@@ -5,9 +5,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">user-manual-boilerplate</h3>
+  <h3 align="center">User Manual Boilerplate</h3>
 
 <!-- PROJECT SHIELDS — keep the blank lines around this block and no indent -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
@@ -32,12 +34,31 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
     <li><a href="#quick-start">Quick Start</a></li>
-    <li><a href="#the-pages">The pages</a></li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#the-pages">The pages</a></li>
+        <li><a href="#publish-as-a-website">Publish as a website</a></li>
+        <li><a href="#versions">Versions</a></li>
+      </ul>
+    </li>
     <li><a href="#configuration">Configuration</a></li>
-    <li><a href="#publish-as-a-website">Publish as a website</a></li>
-    <li><a href="#versions">Versions</a></li>
+    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -63,6 +84,28 @@ for example `docs/adr/`. That is why the manual sits in its own `docs/user-manua
 
 
 
+### Features
+
+- **📄 Twelve pages, four kinds:** entry, learning, task and reference pages, each with one job
+- **🧭 Filled-in example:** the same pages written out for a fictional CLI, `tilecut`
+- **✍️ Writing guide:** why each page exists and how to write it, condensed from The Good Docs Project
+- **🌐 Optional website:** a `mkdocs.yml` that publishes only `docs/user-manual/`
+- **✅ Docs checks:** a pull request template with a user manual checklist, and an offline link check
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+* [![Markdown][Markdown-shield]][Markdown-url]
+* [![MkDocs Material][MkDocs-shield]][MkDocs-url]
+* [![GitHub Actions][Actions-shield]][Actions-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 <!-- QUICK START -->
 ## Quick Start
 
@@ -74,20 +117,39 @@ cp -rn /tmp/umb/template/. .
 grep -rn '{{' docs/user-manual mkdocs.yml
 ```
 
-`cp -n` never overwrites a file you already have. If you already have a
-`.github/PULL_REQUEST_TEMPLATE.md`, copy its **User manual** section in by hand. The last
-command lists the tokens left to replace. Then link the manual from your README:
-
-```markdown
-See the [user manual](docs/user-manual/index.md).
-```
+The last command lists the tokens left to replace.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- THE PAGES -->
-## The pages
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+* `git` and a POSIX shell (`cp`, `grep`)
+* Python with `pip`, only if you publish the manual as a website
+
+### Installation
+
+1. Copy the template into your project with the [Quick Start](#quick-start) commands.
+   `cp -n` never overwrites a file you already have. If you already have a
+   `.github/PULL_REQUEST_TEMPLATE.md`, copy its **User manual** section in by hand.
+2. Replace the tokens, as described in [Configuration](#configuration).
+3. Link the manual from your README:
+   ```markdown
+   See the [user manual](docs/user-manual/index.md).
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- USAGE -->
+## Usage
+
+### The pages
 
 Each page is one kind of documentation. [WRITING_GUIDE.md](WRITING_GUIDE.md) explains why
 and how to write each one.
@@ -113,6 +175,29 @@ GitHub Actions link check.
 | Blank | Filled in |
 | ----- | --------- |
 | [template/docs/user-manual/](template/docs/user-manual/index.md) | [example/docs/user-manual/](example/docs/user-manual/index.md), for a fictional CLI called `tilecut` |
+
+### Publish as a website
+
+The pages render on GitHub as they are. To build a site with MkDocs Material:
+
+```sh
+pip install mkdocs-material
+mkdocs serve
+```
+
+`mkdocs.yml` sets `docs_dir: docs/user-manual`, so other folders under `docs/`, such as
+`docs/adr/` or `docs/agents/`, are not published.
+
+### Versions
+
+The first line of every manual's `index.md` records the template version it came from:
+
+```html
+<!-- user-manual-boilerplate v1.0.0 -->
+```
+
+Keep it. To bring a manual up to a newer template, read [CHANGELOG.md](CHANGELOG.md) from that
+version on.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,34 +227,26 @@ as `reference/api.md` for a CLI-only tool.
 
 
 
-<!-- PUBLISH -->
-## Publish as a website
+<!-- CONTRIBUTING -->
+## Contributing
 
-The pages render on GitHub as they are. To build a site with MkDocs Material:
+Contributions are what make the open source community an amazing place to learn,
+inspire, and create. Any contributions you make are **greatly appreciated**.
 
-```sh
-pip install mkdocs-material
-mkdocs serve
-```
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-`mkdocs.yml` sets `docs_dir: docs/user-manual`, so other folders under `docs/`, such as
-`docs/adr/` or `docs/agents/`, are not published.
+A change to a template page also changes the example page, [WRITING_GUIDE.md](WRITING_GUIDE.md)
+where it applies, and [CHANGELOG.md](CHANGELOG.md). The **Check links** workflow must pass.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Top contributors:
 
-
-
-<!-- VERSIONS -->
-## Versions
-
-The first line of every manual's `index.md` records the template version it came from:
-
-```html
-<!-- user-manual-boilerplate v1.0.0 -->
-```
-
-Keep it. To bring a manual up to a newer template, read [CHANGELOG.md](CHANGELOG.md) from that
-version on.
+<a href="https://github.com/ysasiwat/user-manual-boilerplate/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ysasiwat/user-manual-boilerplate" alt="contrib.rocks image" />
+</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -197,11 +274,21 @@ template into your project without crediting anyone.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/ysasiwat/user-manual-boilerplate.svg?style=for-the-badge
+[contributors-url]: https://github.com/ysasiwat/user-manual-boilerplate/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ysasiwat/user-manual-boilerplate.svg?style=for-the-badge
+[forks-url]: https://github.com/ysasiwat/user-manual-boilerplate/network/members
 [stars-shield]: https://img.shields.io/github/stars/ysasiwat/user-manual-boilerplate.svg?style=for-the-badge
 [stars-url]: https://github.com/ysasiwat/user-manual-boilerplate/stargazers
 [issues-shield]: https://img.shields.io/github/issues/ysasiwat/user-manual-boilerplate.svg?style=for-the-badge
 [issues-url]: https://github.com/ysasiwat/user-manual-boilerplate/issues
 [license-shield]: https://img.shields.io/github/license/ysasiwat/user-manual-boilerplate.svg?style=for-the-badge
 [license-url]: https://github.com/ysasiwat/user-manual-boilerplate/blob/main/LICENSE
+[Markdown-shield]: https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white
+[Markdown-url]: https://commonmark.org/
+[MkDocs-shield]: https://img.shields.io/badge/MkDocs_Material-526CFE?style=for-the-badge&logo=materialformkdocs&logoColor=white
+[MkDocs-url]: https://squidfunk.github.io/mkdocs-material/
+[Actions-shield]: https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white
+[Actions-url]: https://github.com/features/actions
 [readme-boilerplate-url]: https://github.com/ysasiwat/readme-boilerplate
 [tgdp-url]: https://gitlab.com/tgdp/templates

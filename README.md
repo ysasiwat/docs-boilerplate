@@ -245,13 +245,13 @@ where it applies, and [CHANGELOG.md](CHANGELOG.md). The **Check links** workflow
 To release a version (maintainers):
 
 ```sh
-scripts/version.sh bump 1.1.0   # sets VERSION, the index.md markers, adds a CHANGELOG heading
-# write the 1.1.0 section in CHANGELOG.md
+# write the changes under [Unreleased] in CHANGELOG.md first
+scripts/version.sh bump 1.1.0   # moves them under 1.1.0, sets VERSION, the index.md markers and the compare links
 scripts/version.sh check        # the same check runs on every push and pull request
 git commit -am "chore: release v1.1.0" && git tag -a v1.1.0 -m v1.1.0 && git push origin main v1.1.0
 ```
 
-Pushing the tag runs the **Release** workflow, which makes the GitHub release from that
+Pushing the tag runs the release job of the **Version** workflow, which makes the GitHub release from that
 CHANGELOG section.
 
 ### Top contributors:

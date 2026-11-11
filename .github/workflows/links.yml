@@ -18,9 +18,3 @@ jobs:
             --exclude '%7B' --exclude '\{'
             --root-dir '${{ github.workspace }}'
             './**/*.md'
-
-  version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: bash scripts/version.sh check

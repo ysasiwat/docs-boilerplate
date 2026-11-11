@@ -4,6 +4,22 @@ All notable changes to this template. Versions follow [Semantic Versioning](http
 a major version changes the page set or a token name, so a manual made from an older version
 needs work to follow it.
 
+## [Unreleased]
+
+### Added
+
+- `scripts/version.sh` to bump and check the version in `VERSION`, the `index.md` markers and
+  `CHANGELOG.md`, and a release job that makes the GitHub release from this file when a
+  `vX.Y.Z` tag is pushed.
+
+### Changed
+
+- The version check and the release run from the reusable workflows in
+  [ysasiwat/github-workflows](https://github.com/ysasiwat/github-workflows) (`@v1`), called by
+  `.github/workflows/version.yml`; the marker files are set in `scripts/version.conf`.
+- `CHANGELOG.md` follows Keep a Changelog: write changes under `[Unreleased]`, and
+  `scripts/version.sh bump` moves them under the new version and adds the compare links.
+
 ## [1.0.1] - 2026-11-10
 
 ### Added
@@ -25,3 +41,7 @@ needs work to follow it.
 - `WRITING_GUIDE.md`, condensed from The Good Docs Project templates v1.6.0.
 - Optional `mkdocs.yml` with `docs_dir: docs/user-manual`.
 - Pull request template with a user manual checklist, and an offline link check workflow.
+
+[Unreleased]: https://github.com/ysasiwat/user-manual-boilerplate/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ysasiwat/user-manual-boilerplate/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/ysasiwat/user-manual-boilerplate/releases/tag/v1.0.0
